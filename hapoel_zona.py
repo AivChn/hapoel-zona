@@ -3,6 +3,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 from telegram import Bot
 
+
 BOT_TOKEN = '6564444044:AAGeORejzkiaItlyTT5Uq3H0dAccIwk4jUA'
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -13,7 +14,6 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif 'הפועל זונה' == text:
         print('yes')
         await context.bot.pinChatMessage(update.message.chat.id, update.message.message_id)
-
 
 
 async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
