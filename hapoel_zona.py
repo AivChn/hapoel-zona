@@ -4,20 +4,6 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 from telegram import Bot
 
 BOT_TOKEN = '6564444044:AAGeORejzkiaItlyTT5Uq3H0dAccIwk4jUA'
-URL = 'https://api.telegram.org/bot6564444044:AAGeORejzkiaItlyTT5Uq3H0dAccIwk4jUA/'
-
-
-
-async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text('HI')
-
-
-def handle_response(text: str) -> str:
-    if 'Hello' in text:
-        return 'Hello'
-    else:
-        return 'What'
-
 
 async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text: str = update.message.text
@@ -36,8 +22,6 @@ async def error(update: Update, context: ContextTypes.DEFAULT_TYPE):
 if __name__ == '__main__':
     print('Starting...')
     app = Application.builder().token(BOT_TOKEN).build()
-
-    app.add_handler(CommandHandler('start', start_command))
 
     app.add_handler(MessageHandler(filters.TEXT, handle_message))
 
